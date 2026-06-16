@@ -29,21 +29,21 @@
 
 :root {
   --radius: 0.5rem;
-  /* Deep navy bg with electric cyan accent — drawn from Mindful House + CinemaNext logos */
-  --background: oklch(0.16 0.04 250);
-  --foreground: oklch(0.98 0.005 250);
-  --card: oklch(0.20 0.04 250);
-  --card-foreground: oklch(0.98 0.005 250);
-  --primary: oklch(0.82 0.16 210);          /* cyan */
-  --primary-foreground: oklch(0.15 0.04 250);
-  --secondary: oklch(0.55 0.18 255);        /* indigo blue */
-  --secondary-foreground: oklch(0.98 0.005 250);
-  --muted: oklch(0.24 0.03 250);
-  --muted-foreground: oklch(0.72 0.02 250);
-  --accent: oklch(0.82 0.16 210);
-  --accent-foreground: oklch(0.15 0.04 250);
-  --border: oklch(1 0 0 / 10%);
-  --ring: oklch(0.82 0.16 210);
+  /* Warm light theme — professional, airy, readable */
+  --background: oklch(0.97 0.01 90);
+  --foreground: oklch(0.18 0.03 250);
+  --card: oklch(0.94 0.01 90);
+  --card-foreground: oklch(0.18 0.03 250);
+  --primary: oklch(0.40 0.12 210);          /* deep teal */
+  --primary-foreground: oklch(0.98 0.005 90);
+  --secondary: oklch(0.35 0.10 255);        /* navy blue */
+  --secondary-foreground: oklch(0.98 0.005 90);
+  --muted: oklch(0.88 0.01 90);
+  --muted-foreground: oklch(0.50 0.02 250);
+  --accent: oklch(0.82 0.10 210);
+  --accent-foreground: oklch(0.18 0.03 250);
+  --border: oklch(0.18 0.03 250 / 12%);
+  --ring: oklch(0.40 0.12 210);
 }
 
 @layer base {
