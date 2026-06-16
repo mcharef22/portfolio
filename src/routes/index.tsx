@@ -115,7 +115,7 @@ function Portfolio() {
         className="pointer-events-none fixed inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(60% 50% at 80% 0%, oklch(0.55 0.18 255 / 0.25), transparent 70%), radial-gradient(50% 40% at 10% 100%, oklch(0.82 0.16 210 / 0.18), transparent 70%)",
+            "radial-gradient(60% 50% at 80% 0%, oklch(0.40 0.12 210 / 0.08), transparent 70%), radial-gradient(50% 40% at 10% 100%, oklch(0.60 0.08 255 / 0.06), transparent 70%)",
         }}
       />
 
