@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import mindfulAsset from "@/assets/mindful-house.png.asset.json";
 import cinemanextAsset from "@/assets/cinemanext.png.asset.json";
 import cvAsset from "@/assets/cv.pdf.asset.json";
+import photoAsset from "@/assets/photo-profil.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -114,7 +115,7 @@ function Portfolio() {
         className="pointer-events-none fixed inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(60% 50% at 80% 0%, oklch(0.55 0.18 255 / 0.25), transparent 70%), radial-gradient(50% 40% at 10% 100%, oklch(0.82 0.16 210 / 0.18), transparent 70%)",
+            "radial-gradient(60% 50% at 80% 0%, oklch(0.40 0.12 210 / 0.08), transparent 70%), radial-gradient(50% 40% at 10% 100%, oklch(0.60 0.08 255 / 0.06), transparent 70%)",
         }}
       />
 
@@ -141,38 +142,54 @@ function Portfolio() {
       </header>
 
       {/* HERO */}
-      <section id="top" className="mx-auto max-w-6xl px-6 pt-24 pb-32">
-        <p className="text-sm uppercase tracking-[0.3em] text-primary mb-8">
-          Développeur Fullstack · Le Mans, France
-        </p>
-        <h1 className="font-display text-[clamp(3rem,9vw,8rem)] leading-[0.95] tracking-tight">
-          Je construis des <em className="text-gradient not-italic">produits</em>
-          <br />web & mobile qui partent
-          <br />en <em className="italic text-muted-foreground">production.</em>
-        </h1>
+      <section id="top" className="mx-auto max-w-6xl px-6 pt-16 pb-32">
+        <div className="grid md:grid-cols-[1fr_auto] gap-12 items-center">
+          <div>
+            <p className="text-sm uppercase tracking-[0.3em] text-primary mb-8">
+              Développeur Fullstack · Le Mans, France
+            </p>
+            <h1 className="font-display text-[clamp(3rem,9vw,8rem)] leading-[0.95] tracking-tight">
+              Je construis des <em className="text-gradient not-italic">produits</em>
+              <br />web & mobile qui partent
+              <br />en <em className="italic text-muted-foreground">production.</em>
+            </h1>
 
-        <div className="mt-12 grid md:grid-cols-3 gap-8 items-end">
-          <p className="md:col-span-2 text-lg text-muted-foreground max-w-xl leading-relaxed">
-            3 ans d'alternance chez <span className="text-foreground">Mindful House</span>.
-            React, Node.js, Flutter, MongoDB. Une app web déployée, une app
-            mobile sur l'App Store et le Play Store, un POC DevOps en interne.
-            Je cherche aujourd'hui un <span className="text-foreground">CDI</span> pour continuer à livrer.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <a
-              href={cvAsset.url}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-3 text-sm font-medium hover:opacity-90 transition"
-            >
-              Télécharger le CV ↓
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-card transition"
-            >
-              Me contacter
-            </a>
+            <div className="mt-12 grid md:grid-cols-[1fr_auto] gap-8 items-end">
+              <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
+                3 ans d'alternance chez <span className="text-foreground">Mindful House</span>.
+                React, Node.js, Flutter, MongoDB. Une app web déployée, une app
+                mobile sur l'App Store et le Play Store, un POC DevOps en interne.
+                Je cherche aujourd'hui un <span className="text-foreground">CDI</span> pour continuer à livrer.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href={cvAsset.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary text-primary-foreground px-5 py-3 text-sm font-medium hover:opacity-90 transition"
+                >
+                  Télécharger le CV ↓
+                </a>
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-3 text-sm font-medium hover:bg-card transition"
+                >
+                  Me contacter
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="hidden md:block">
+            <div className="relative">
+              <img
+                src={photoAsset.url}
+                alt="Mouad Charef"
+                className="w-64 h-64 lg:w-80 lg:h-80 rounded-3xl object-cover border border-border shadow-xl"
+              />
+              <div className="absolute -bottom-4 -right-4 w-24 h-24 rounded-2xl bg-primary/10 border border-primary/20 backdrop-blur-sm" />
+              <div className="absolute -top-4 -left-4 w-16 h-16 rounded-xl bg-secondary/10 border border-secondary/20 backdrop-blur-sm" />
+            </div>
           </div>
         </div>
 
