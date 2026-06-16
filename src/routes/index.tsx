@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import mindfulAsset from "@/assets/mindful-house.png.asset.json";
 import cinemanextAsset from "@/assets/cinemanext.png.asset.json";
 import cvAsset from "@/assets/cv.pdf.asset.json";
+import photoAsset from "@/assets/photo-profil.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
