@@ -1,115 +1,115 @@
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
-  createRootRouteWithContext,
+  createRootRoute,
   useRouter,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
-
+import type { ReactNode } from "react";
+import { getDictionary, toLocale, useLocale } from "../i18n";
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { assetUrl, localeUrl, languageRedirectScript } from "../lib/site";
 
 function NotFoundComponent() {
+  const { locale, t } = useLocale();
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
-      </div>
-    </div>
+    <main className="error-screen">
+      <p className="eyebrow">404</p>
+      <h1>{t.ui.notFound}</h1>
+      <p>{t.ui.notFoundText}</p>
+      <Link className="button" to="/" search={{ lang: locale }}>
+        {t.ui.backHome}
+      </Link>
+    </main>
   );
 }
-
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
-  console.error(error);
+function ErrorComponent({ reset }: { reset: () => void }) {
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
-
+  const { locale, t } = useLocale();
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-xl font-semibold tracking-tight text-foreground">
-          This page didn't load
-        </h1>
-        <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
-        </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-2">
-          <button
-            onClick={() => {
-              router.invalidate();
-              reset();
-            }}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Try again
-          </button>
-          <a
-            href="/"
-            className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
-          >
-            Go home
-          </a>
-        </div>
-      </div>
-    </div>
+    <main className="error-screen">
+      <h1>{t.ui.error}</h1>
+      <p>{t.ui.errorText}</p>
+      <button
+        className="button"
+        onClick={() => {
+          void router.invalidate();
+          reset();
+        }}
+      >
+        {t.ui.retry}
+      </button>
+      <a className="text-link" href={localeUrl(locale)}>
+        {t.ui.backHome}
+      </a>
+    </main>
   );
 }
-
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Mouad Charef — Développeur Full Stack React, Node.js & Flutt" },
-      { name: "description", content: "Développeur Full Stack basé au Mans. Je crée des applications web et mobiles modernes avec React, Node.js, Flutter et MongoDB. Découvrez mes projets et mon expé" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Mouad Charef — Développeur Full Stack React, Node.js & Flutt" },
-      { property: "og:description", content: "Développeur Full Stack basé au Mans. Je crée des applications web et mobiles modernes avec React, Node.js, Flutter et MongoDB. Découvrez mes projets et mon expé" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Mouad Charef — Développeur Full Stack React, Node.js & Flutt" },
-      { name: "twitter:description", content: "Développeur Full Stack basé au Mans. Je crée des applications web et mobiles modernes avec React, Node.js, Flutter et MongoDB. Découvrez mes projets et mon expé" },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4204fa78-1942-4afe-871e-48cc011cd699" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4204fa78-1942-4afe-871e-48cc011cd699" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap",
-      },
-    ],
+function RootContent() {
+  return <Outlet />;
+}
+export const Route = createRootRoute({
+  validateSearch: (search: Record<string, unknown>) => ({
+    lang: search.lang === "fr" || search.lang === "en" ? search.lang : undefined,
   }),
+  head: ({ match, matches }) => {
+    const locale = toLocale(match.search.lang, matches.at(-1)?.pathname);
+    const { seo } = getDictionary(locale);
+    const site = import.meta.env.VITE_SITE_URL;
+    const canonical = site
+      ? new URL(locale === "en" ? "en/" : "", site.replace(/\/+$/, "") + "/").href
+      : undefined;
+    return {
+      meta: [
+        { charSet: "utf-8" },
+        { name: "viewport", content: "width=device-width, initial-scale=1" },
+        { title: seo.title },
+        { name: "description", content: seo.description },
+        { name: "author", content: "Mouad Charef" },
+        { name: "theme-color", content: "#151918" },
+        { property: "og:title", content: seo.title },
+        { property: "og:description", content: seo.description },
+        { property: "og:type", content: "website" },
+        ...(canonical ? [{ property: "og:url", content: canonical }] : []),
+        { property: "og:locale", content: seo.locale },
+        { name: "twitter:card", content: "summary" },
+        { name: "twitter:title", content: seo.title },
+        { name: "twitter:description", content: seo.description },
+      ],
+      links: [
+        { rel: "stylesheet", href: appCss },
+        { rel: "icon", type: "image/svg+xml", href: assetUrl("favicon.svg") },
+        ...(canonical ? [{ rel: "canonical", href: canonical }] : []),
+        {
+          rel: "alternate",
+          hrefLang: "fr",
+          href: site ? new URL("./", site.replace(/\/+$/, "") + "/").href : localeUrl("fr"),
+        },
+        {
+          rel: "alternate",
+          hrefLang: "en",
+          href: site ? new URL("en/", site.replace(/\/+$/, "") + "/").href : localeUrl("en"),
+        },
+        {
+          rel: "alternate",
+          hrefLang: "x-default",
+          href: site ? new URL("./", site.replace(/\/+$/, "") + "/").href : localeUrl("fr"),
+        },
+      ],
+    };
+  },
   shellComponent: RootShell,
-  component: RootComponent,
+  component: RootContent,
   notFoundComponent: NotFoundComponent,
   errorComponent: ErrorComponent,
 });
-
 function RootShell({ children }: { children: ReactNode }) {
+  const { locale } = useLocale();
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: languageRedirectScript }} />
         <HeadContent />
       </head>
       <body>
@@ -117,16 +117,5 @@ function RootShell({ children }: { children: ReactNode }) {
         <Scripts />
       </body>
     </html>
-  );
-}
-
-function RootComponent() {
-  const { queryClient } = Route.useRouteContext();
-
-  return (
-    <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
-    </QueryClientProvider>
   );
 }

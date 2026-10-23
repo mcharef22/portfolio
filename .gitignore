@@ -1,30 +1,43 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# Dependencies and generated builds
+node_modules/
+dist/
+dist-ssr/
+.output/
+.vinxi/
+.tanstack/
+.nitro/
+*.tsbuildinfo
 
-node_modules
-dist
-dist-ssr
-.output
-.vinxi
-.tanstack/**
-.nitro
-*.local
-
-# Wrangler / Cloudflare
-.wrangler/
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
 .dev.vars
+.wrangler/
+.aws/
+.codex/
+.agents/
+*.local
+.qa.local/
 
-# Editor directories and files
+# Logs, validation artifacts and internal reports
+logs/
+*.log
+coverage/
+playwright-report/
+test-results/
+docs/FINALISATION.md
+docs/cleanup-manifest.json
+docs/file-changes.json
+
+# Editors and operating systems
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
+Thumbs.db
 *.suo
 *.ntvs*
 *.njsproj
