@@ -1,7 +1,7 @@
 export const profile = {
   name: "Mouad Charef",
   location: "Paris, France",
-  email: "mouadmami2003@gmail.com",
+  email: "mouad.charef.dev@gmail.com",
   phone: "+33 7 67 86 04 43",
   phoneHref: "+33767860443",
   linkedin: "https://www.linkedin.com/in/mouad-charef-218b1a1b8/",
