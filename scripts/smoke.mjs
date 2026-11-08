@@ -25,7 +25,9 @@ try {
       assert.ok(html.includes(lang === "fr" ? "Développeur" : "Developer"));
       assert.ok(html.includes("Paris, France"));
       assert.ok(html.includes("Mindful House"));
-      assert.ok(html.includes(lang === "fr" ? "Sept. 2022 — Oct. 2025" : "Sept. 2022 — Oct. 2025"));
+      assert.ok(html.includes("Sept. 2024 — Oct. 2025"));
+      assert.ok(html.includes(lang === "fr" ? "Sept. 2022 — Août 2024" : "Sept. 2022 — Aug. 2024"));
+      assert.ok(html.includes("ONAM TECH"));
       assert.doesNotMatch(
         html,
         /__l5e|@Lovable|lovable-error-reporting|Déc. 2025|CinemaNext Africa|Demander mon CV/,

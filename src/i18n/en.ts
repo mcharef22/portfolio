@@ -98,7 +98,7 @@ export const en: Dictionary = {
     experience: {
       label: "Experience",
       title: "Build, maintain and improve.",
-      text: "Over three years at Mindful House, followed by independent work exploring Full-Stack development and AI.",
+      text: "Over three years at Mindful House, progressing from Full-Stack development to Tech Lead, followed by a freelance HRIS & AI role at ONAM TECH.",
     },
     skills: {
       label: "Skills",
@@ -127,7 +127,7 @@ export const en: Dictionary = {
       state: "local",
       description:
         "Centralise HR workflows and make internal information and documents easier to access through a contextual AI assistant.",
-      role: "Independent design and development since June 2026. A personal Java / Spring Boot and Angular project, validated in a local environment.",
+        role: "Independent design and development since January 2026. A personal Java / Spring Boot and Angular project, validated in a local environment.",
       stack: [
         "Java",
         "Spring Boot",
@@ -269,35 +269,40 @@ export const en: Dictionary = {
   ],
   experience: [
     {
-      period: "June 2026 — present",
-      company: "Independent · remote",
-      role: "HR platform development with an AI assistant",
-      summary: "PeopleFlow: a personal Java / Angular project, validated locally.",
+      period: "Jan. 2026 — present",
+      company: "ONAM TECH · Freelance",
+      role: "Fullstack Software Engineer — HRIS & AI",
+      summary:
+        "Design and development of a Human Resources Information System with Angular, Java and Spring Boot.",
       details: [
-        "Employee, leave, absence, document, payslip and notification modules.",
-        "Ollama / Qwen3 assistant with RAG to query HR documents and cite sources.",
-        "PostgreSQL, automated tests and Docker containerisation.",
+        "Development of employee, leave, absence, document, payslip and notification modules.",
+        "Integration of an AI assistant with Ollama and Qwen3, using RAG to query HR documents and provide answers with source references.",
+        "Implementation of automated tests, Docker containerisation and a PostgreSQL database.",
       ],
     },
     {
-      period: "Jan. — June 2026",
-      company: "Malaysia & Qatar",
-      role: "Career break — learning and international travel",
-      summary: "Independent learning, technical development and English language practice.",
-      details: [],
+      period: "Sept. 2024 — Oct. 2025",
+      company: "Mindful House · Le Mans",
+      role: "Tech Lead / Fullstack Developer",
+      summary:
+        "Gathering and analysing client requirements, then translating them into functional and technical solutions.",
+      details: [
+        "Defining tools, development standards and team best practices.",
+        "Setting up technical benchmarks to evaluate and compare solutions.",
+        "Overseeing code quality, conducting code reviews and providing technical guidance to an apprentice developer.",
+        "Contributing to application development, maintenance and continuous improvement.",
+      ],
     },
     {
-      period: "Sept. 2022 — Oct. 2025",
+      period: "Sept. 2022 — Aug. 2024",
       company: "Mindful House · Le Mans",
-      role: "Full-Stack Developer — Technical Lead",
+      role: "Full-Stack Developer",
       summary:
-        "RoadMaker and RoadPlayer: from design to deployment, with technical leadership responsibilities.",
+        "Design and development of RoadMaker, a SaaS platform for geolocated routes built with React, Node.js, Express and MongoDB.",
       details: [
-        "SaaS design, development and maintenance: React, Node.js, Express and MongoDB.",
-        "Flutter for Android / iOS: GPS, Google Maps, QR codes and multimedia.",
-        "REST APIs, JWT, external services and feature optimisation.",
-        "Corrective and evolutionary maintenance, Jest tests, Docker, GitHub Actions and GCP.",
-        "Client discussions, requirements analysis and technical guidance for an apprentice developer.",
+        "Development of RoadPlayer, a Flutter mobile application integrating GPS, Google Maps, QR codes and multimedia content.",
+        "REST API design, JWT authentication and integration of external services.",
+        "Corrective and evolutionary maintenance, automated tests and deployments with Docker, GitHub Actions and GCP.",
       ],
     },
     {

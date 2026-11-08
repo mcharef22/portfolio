@@ -99,7 +99,7 @@ export const fr = {
     experience: {
       label: "Expérience",
       title: "Construire, puis faire évoluer.",
-      text: "Plus de trois ans chez Mindful House, puis un parcours indépendant autour du Full-Stack et de l’IA.",
+      text: "Plus de trois ans chez Mindful House, du développement Full-Stack au rôle de Tech Lead, puis une mission freelance SIRH & IA chez ONAM TECH.",
     },
     skills: {
       label: "Compétences",
@@ -128,7 +128,7 @@ export const fr = {
       state: "local",
       description:
         "Centraliser les processus RH et faciliter l’accès aux informations et documents internes grâce à un assistant IA contextualisé.",
-      role: "Conception et développement indépendant depuis juin 2026. Projet personnel Full-Stack Java / Spring Boot et Angular, validé en environnement local.",
+        role: "Conception et développement indépendant depuis janvier 2026. Projet personnel Full-Stack Java / Spring Boot et Angular, validé en environnement local.",
       stack: [
         "Java",
         "Spring Boot",
@@ -270,35 +270,40 @@ export const fr = {
   ] satisfies Project[],
   experience: [
     {
-      period: "Juin 2026 — en cours",
-      company: "Indépendant · à distance",
-      role: "Développement d’un SIRH avec assistant IA",
-      summary: "PeopleFlow : projet personnel Java / Angular, validé localement.",
+      period: "Janv. 2026 — en cours",
+      company: "ONAM TECH · Freelance",
+      role: "Ingénieur logiciel Fullstack — SIRH & IA",
+      summary:
+        "Conception et développement d’un Système d’Information des Ressources Humaines avec Angular, Java et Spring Boot.",
       details: [
-        "Modules collaborateurs, congés, absences, documents, bulletins et notifications.",
-        "Assistant Ollama / Qwen3 et RAG pour interroger les documents RH avec sources.",
-        "PostgreSQL, tests automatisés et conteneurisation Docker.",
+        "Développement des modules collaborateurs, congés, absences, documents, bulletins de paie et notifications.",
+        "Intégration d’un assistant IA avec Ollama et Qwen3, utilisant le RAG pour interroger les documents RH et fournir des réponses avec sources.",
+        "Mise en place de tests automatisés, de la conteneurisation Docker et d’une base de données PostgreSQL.",
       ],
     },
     {
-      period: "Janv. — Juin 2026",
-      company: "Malaisie & Qatar",
-      role: "Pause professionnelle — formation et voyages",
-      summary: "Apprentissage autonome, approfondissement technique et pratique de l’anglais.",
-      details: [],
+      period: "Sept. 2024 — Oct. 2025",
+      company: "Mindful House · Le Mans",
+      role: "Tech Lead / Développeur Fullstack",
+      summary:
+        "Recueil et analyse des besoins clients, traduction en solutions fonctionnelles et techniques.",
+      details: [
+        "Définition des outils, des standards de développement et des bonnes pratiques de l’équipe.",
+        "Mise en place de benchmarks techniques pour évaluer et comparer les solutions.",
+        "Supervision de la qualité du code, revues de code et accompagnement technique d’un alternant.",
+        "Participation au développement, à la maintenance et à l’amélioration continue des applications.",
+      ],
     },
     {
-      period: "Sept. 2022 — Oct. 2025",
+      period: "Sept. 2022 — Août 2024",
       company: "Mindful House · Le Mans",
-      role: "Développeur Full-Stack — Référent technique",
+      role: "Développeur Full-Stack",
       summary:
-        "RoadMaker et RoadPlayer : de la conception au déploiement, avec un rôle de référent technique.",
+        "Conception et développement de RoadMaker, plateforme SaaS de parcours géolocalisés avec React, Node.js, Express et MongoDB.",
       details: [
-        "Conception, développement et maintenance SaaS : React, Node.js, Express et MongoDB.",
-        "Flutter Android / iOS : GPS, Google Maps, QR codes et multimédia.",
-        "API REST, JWT, services externes et optimisation des fonctionnalités.",
-        "Maintenance corrective et évolutive, tests Jest, Docker, GitHub Actions et GCP.",
-        "Échanges clients, analyse des besoins et encadrement technique d’un alternant.",
+        "Développement de RoadPlayer, application mobile Flutter intégrant GPS, Google Maps, QR codes et contenus multimédias.",
+        "Conception d’API REST, authentification JWT et intégration de services externes.",
+        "Maintenance corrective et évolutive, tests automatisés et déploiements avec Docker, GitHub Actions et GCP.",
       ],
     },
     {
