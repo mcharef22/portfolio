@@ -127,7 +127,7 @@ export const en: Dictionary = {
       state: "local",
       description:
         "Centralise HR workflows and make internal information and documents easier to access through a contextual AI assistant.",
-        role: "Independent design and development since January 2026. A personal Java / Spring Boot and Angular project, validated in a local environment.",
+      role: "Independent design and development since January 2026. A personal Java / Spring Boot and Angular project, validated in a local environment.",
       stack: [
         "Java",
         "Spring Boot",

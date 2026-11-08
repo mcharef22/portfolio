@@ -128,7 +128,7 @@ export const fr = {
       state: "local",
       description:
         "Centraliser les processus RH et faciliter l’accès aux informations et documents internes grâce à un assistant IA contextualisé.",
-        role: "Conception et développement indépendant depuis janvier 2026. Projet personnel Full-Stack Java / Spring Boot et Angular, validé en environnement local.",
+      role: "Conception et développement indépendant depuis janvier 2026. Projet personnel Full-Stack Java / Spring Boot et Angular, validé en environnement local.",
       stack: [
         "Java",
         "Spring Boot",
