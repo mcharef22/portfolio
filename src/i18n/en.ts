@@ -86,14 +86,14 @@ export const en: Dictionary = {
     title: "From business needs to deployed applications.",
     paragraphs: [
       "I connect interfaces, APIs and data. At Mindful House, I designed and maintained RoadMaker and RoadPlayer, worked directly with clients and provided technical guidance to an apprentice developer.",
-      "My personal projects build on that experience. PeopleFlow brings an AI assistant and RAG architecture to a Java / Angular HR platform. I also explore backend migration to Spring Boot and the reliability of LLM-generated Java tests.",
+      "As part of my freelance assignment at ONAM TECH, I develop PeopleFlow, a Java / Angular HR platform integrating an AI assistant and RAG architecture. My personal projects explore backend migration to Spring Boot and the reliability of LLM-generated Java tests.",
     ],
   },
   sections: {
     projects: {
       label: "Selected projects",
       title: "Real applications. Concrete challenges.",
-      text: "Two professional projects and three personal projects, from SaaS development to AI integration in business applications.",
+      text: "Three professional projects and two personal projects, from SaaS development to AI integration in business applications.",
     },
     experience: {
       label: "Experience",
@@ -121,13 +121,13 @@ export const en: Dictionary = {
     {
       id: "peopleflow",
       name: "PeopleFlow — HR platform with an AI assistant",
-      category: "personal",
+      category: "professional",
       label: "JAVA / ANGULAR · AI & RAG",
       ai: true,
       state: "local",
       description:
         "Centralise HR workflows and make internal information and documents easier to access through a contextual AI assistant.",
-      role: "Independent design and development since January 2026. A personal Java / Spring Boot and Angular project, validated in a local environment.",
+      role: "Fullstack Software Engineer — HRIS & AI on a freelance assignment at ONAM TECH since January 2026. Design and development of PeopleFlow with Java / Spring Boot and Angular, validated in a local environment.",
       stack: [
         "Java",
         "Spring Boot",

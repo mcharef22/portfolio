@@ -14,7 +14,7 @@ React 19, TypeScript, TanStack Router / Start, Vite 8 et Lucide React. Les pages
 - Navigation clavier, affichage mobile et respect du mouvement r?duit.
 - Polices syst?me sans service externe.
 
-PeopleFlow est pr?sent? comme un projet personnel valid? localement. Les sch?mas des projets ne sont pas des captures de produits.
+PeopleFlow est développé en mission freelance chez ONAM TECH et validé localement. Les schémas des projets ne sont pas des captures de produits.
 
 ## Installation et d?veloppement
 

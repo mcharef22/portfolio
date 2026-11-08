@@ -87,14 +87,14 @@ export const fr = {
     title: "Du besoin métier à l’application déployée.",
     paragraphs: [
       "Mon travail relie les interfaces, les API et les données. Chez Mindful House, j’ai conçu et fait évoluer RoadMaker et RoadPlayer, échangé directement avec les clients et encadré techniquement un alternant.",
-      "Mes projets personnels prolongent cette expérience : PeopleFlow intègre un assistant IA et une architecture RAG dans un SIRH Java / Angular. J’explore aussi la migration vers Spring Boot et la fiabilité des tests Java générés par les LLM.",
+      "Dans le cadre de ma mission freelance chez ONAM TECH, je développe PeopleFlow, un SIRH Java / Angular intégrant un assistant IA et une architecture RAG. Mes projets personnels explorent la migration vers Spring Boot et la fiabilité des tests Java générés par les LLM.",
     ],
   },
   sections: {
     projects: {
       label: "Projets sélectionnés",
       title: "Des applications. Des enjeux concrets.",
-      text: "Deux projets professionnels et trois projets personnels. De l’expérience SaaS à l’intégration de l’IA dans des applications métier.",
+      text: "Trois projets professionnels et deux projets personnels. De l’expérience SaaS à l’intégration de l’IA dans des applications métier.",
     },
     experience: {
       label: "Expérience",
@@ -122,13 +122,13 @@ export const fr = {
     {
       id: "peopleflow",
       name: "PeopleFlow — SIRH intelligent avec assistant IA",
-      category: "personal",
+      category: "professional",
       label: "JAVA / ANGULAR · IA & RAG",
       ai: true,
       state: "local",
       description:
         "Centraliser les processus RH et faciliter l’accès aux informations et documents internes grâce à un assistant IA contextualisé.",
-      role: "Conception et développement indépendant depuis janvier 2026. Projet personnel Full-Stack Java / Spring Boot et Angular, validé en environnement local.",
+      role: "Ingénieur logiciel Fullstack — SIRH & IA en mission freelance chez ONAM TECH depuis janvier 2026. Conception et développement de PeopleFlow avec Java / Spring Boot et Angular, validé en environnement local.",
       stack: [
         "Java",
         "Spring Boot",
